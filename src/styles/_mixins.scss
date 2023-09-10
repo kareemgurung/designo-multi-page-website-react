@@ -1,0 +1,33 @@
+$primary-color-100: hsla(10, 72%, 66%, 1);
+$primary-color-200: hsla(264, 4%, 11%, 1);
+$primary-color-300: hsla(0, 0%, 100%, 1);
+
+$secondary-color-100: hsla(10, 100%, 80%, 1);
+$secondary-color-200: hsla(264, 5%, 20%, 1);
+$secondary-color-300: hsla(210, 17%, 95%, 0.86);
+
+@mixin flexCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin maxWidth {
+  margin-inline: auto;
+  width: min(77vw, 1110px);
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin transition {
+  transition: all 0.3s ease;
+}
