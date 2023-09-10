@@ -1,0 +1,109 @@
+@import "../../styles/mixins";
+
+.header {
+  position: relative;
+}
+
+.container {
+  @include flexCenter(row);
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 24px;
+
+
+  button {
+    border: 1px solid transparent;
+    background-color: inherit;
+    cursor: pointer;
+  }
+
+  .menu {
+    display: none;
+
+    background-color: $primary-color-200;
+    list-style: none;
+
+    position: absolute;
+    left: 0;
+    top: 96px;
+
+    width: 100%;
+    padding: 48px 24px;
+    gap: 32px;
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 25px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: $primary-color-300;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .active {
+    @include flexCenter(column);
+  }
+
+  @include tablet {
+    padding: 64px 42px 64px 39px;
+
+    button {
+      display: none;
+    }
+
+    .menu {
+      @include flexCenter(row);
+      align-items: center;
+      position: static;
+      background-color: inherit;
+      padding: 0;
+      width: max-content;
+      gap: 42px;
+
+      a {
+        color: $secondary-color-200;
+        font-size: 14px;
+        line-height: 14px;
+
+      }
+    }
+  }
+
+  @include desktop {
+    @include maxWidth;
+    padding-inline: 0;
+    padding-bottom: 67px;
+  }
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  background-color: $primary-color-200;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.backdropActive {
+  display: block;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+

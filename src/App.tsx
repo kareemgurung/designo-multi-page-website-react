@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Design from "./pages/Design/Design";
+import Locations from "./pages/Locations/Locations";
 
 const Root = () => {
   return (
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />
+      },
+      {
+        path: "/locations",
+        element: <Locations />
       },
       {
         path: "/design/:id",
